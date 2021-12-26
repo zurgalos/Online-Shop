@@ -1,0 +1,77 @@
+<div class="contain">
+  <p class="norm bold showProducts">Our products</p>
+</div>
+<div class="tabs-container">
+  <main *ngIf="products">
+    <input id="tab1" type="radio" name="tabs" checked />
+    <label for="tab1">Drinks</label>
+
+    <input id="tab2" type="radio" name="tabs" />
+    <label for="tab2">Meat & Fish</label>
+
+    <input id="tab3" type="radio" name="tabs" />
+    <label for="tab3">Snacks</label>
+
+    <input id="tab4" type="radio" name="tabs" />
+    <label for="tab4">Vegetables & Fruits</label>
+    <section class="content1">
+      <mat-tab-group headerPosition="below">
+        <mat-tab
+          *ngFor="let product of products.drinks"
+          label="{{ product.name }}"
+        >
+          <div class="img-description-container">
+            <img src="{{ product.imagePath }}" alt="" srcset="" />
+            <h3>{{ product.name }}</h3>
+            <p>Price: {{ product.price }}₪</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </section>
+
+    <section class="content2">
+      <mat-tab-group headerPosition="below">
+        <mat-tab
+          *ngFor="let product of products.meatAndFish"
+          label="{{ product.name }}"
+        >
+          <div class="img-description-container">
+            <img src="{{ product.imagePath }}" alt="" srcset="" />
+            <h3>{{ product.name }}</h3>
+            <p>Price: {{ product.price }}₪</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </section>
+
+    <section class="content3">
+      <mat-tab-group headerPosition="below">
+        <mat-tab
+          *ngFor="let product of products.snacks"
+          label="{{ product.name }}"
+        >
+          <div class="img-description-container">
+            <img src="{{ product.imagePath }}" alt="" srcset="" />
+            <h3>{{ product.name }}</h3>
+            <p>Price: {{ product.price }}₪</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </section>
+
+    <section class="content4">
+      <mat-tab-group headerPosition="below">
+        <mat-tab
+          *ngFor="let product of products.vegetablesAndFruits"
+          label="{{ product.name }}"
+        >
+          <div class="img-description-container">
+            <img src="{{ product.imagePath }}" alt="" srcset="" />
+            <h3>{{ product.name }}</h3>
+            <p>Price: {{ product.price }}₪</p>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </section>
+  </main>
+</div>

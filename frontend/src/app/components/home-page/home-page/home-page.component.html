@@ -1,0 +1,66 @@
+<br />
+<br />
+<br />
+<div class="contain">
+  <p class="norm bold test">ONLINE-SHOP</p>
+</div>
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Welcome {{ user?.firstName || "User" }}!</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content *ngIf="user?.isAdmin !== true">
+      <p *ngIf="!userIsAuthenticated">
+        Welcome!,in order to continue to our shop you must login:
+      </p>
+      <p *ngIf="userIsAuthenticated && lastOrder">
+        You're last Order was at {{ lastOrder.createdAt | date }}.
+      </p>
+      <p *ngIf="userIsAuthenticated && !lastOrder">
+        You haven't made an order yet..
+      </p>
+      <p *ngIf="userIsAuthenticated && cart">
+        you have an open cart from {{ cart.createdAt | date }}. <br /><br />
+        total cart Price: {{ totalCartPrice }}₪.
+      </p>
+      <p *ngIf="userIsAuthenticated && !cart">
+        You Don't have an open cart, click on Go To shop Button To start
+        Shopping.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div *ngIf="!userIsAuthenticated" class="logs-wrapper">
+        <button (click)="openDialog()" mat-button>
+          <i class="fas fa-sign-in-alt"></i><br />
+          Login
+        </button>
+        <a mat-button routerLink="/register"
+          ><i class="fas fa-user-plus"></i><br />
+          Register</a
+        >
+      </div>
+    </mat-card-actions>
+    <mat-card-content *ngIf="user?.isAdmin === true">
+      <p>
+        Welcome Admin!, Please Click On Go To Shop Button To Start Editing
+        Products.
+      </p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <div class="info-container">
+        <mat-card-title class="products-container">
+          We currently have: <br />{{ totalAmountOfProducts }} Products in
+          stock.
+          <br />
+        </mat-card-title>
+        <mat-card-title class="products-container">
+          Total Orders:<br />{{ totalAmountOfOrders }}
+        </mat-card-title>
+      </div>
+    </mat-card-header>
+  </mat-card>
+  <app-products-tab *ngIf="user?.isAdmin !== true"></app-products-tab>
+</div>

@@ -1,0 +1,87 @@
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
+section {
+  height: 300px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  font-size: larger;
+}
+
+.container {
+  background-color: rgba(211, 211, 211, 0.452);
+  display: flex;
+  height: 100%;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.search-product-input {
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.322);
+  font-size: larger;
+}
+
+table {
+  width: 100%;
+}
+
+table td,
+th {
+  padding: 10px;
+  text-align: center;
+}
+
+img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+mat-card {
+  flex: 40%;
+  min-height: 200px;
+  text-align: left;
+  margin: 1rem;
+  background-color: rgba(173, 216, 230, 0.233);
+  font-family: "Open Sans", sans-serif;
+}
+
+/* ------------------------------------------- */
+
+.contain,
+.contain1,
+.contain2 {
+  overflow: hidden;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+#line {
+  overflow: hidden;
+  height: auto;
+}
+
+p.norm {
+  letter-spacing: 0.2em;
+  font-size: 50px;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 700;
+  font-size: 50px !important;
+  text-transform: uppercase;
+}

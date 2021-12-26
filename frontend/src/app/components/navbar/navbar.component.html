@@ -1,0 +1,65 @@
+<div class="nav-box">
+  <mat-toolbar>
+    <span class="">
+      <a routerLink="/"></a>
+      <a class="welcome-auth-user" *ngIf="userIsAuthenticated" routerLink="/"
+        >Hello {{ user.firstName }}</a
+      >
+    </span>
+    <span *ngIf="!userIsAuthenticated" class="spacer"></span>
+    <ul class="navbar-actions">
+      <li (click)="openDialog()" *ngIf="!userIsAuthenticated">
+        <a mat-button routerLinkActive="mat-accent"
+          ><i class="fas fa-sign-in-alt"></i><br />
+          Login</a
+        >
+      </li>
+      <li *ngIf="!userIsAuthenticated">
+        <a mat-button routerLink="/register" routerLinkActive="active"
+          ><i class="fas fa-user-plus"></i><br />
+          Signup</a
+        >
+      </li>
+
+      <li
+        (click)="openCartDialog()"
+        class="cart-box"
+        *ngIf="
+          userIsAuthenticated &&
+          currentRoute === '/shop' &&
+          user.isAdmin === false
+        "
+      >
+        <a mat-button
+          ><i class="fas fa-shopping-cart"></i><br />
+          <span>{{ totalProductsSum }} </span></a
+        >
+      </li>
+      <li
+        class="cart-box"
+        *ngIf="userIsAuthenticated && user.isAdmin === false"
+      >
+        <a routerLink="/shop" routerLinkActive="active" mat-button
+          ><i class="fas fa-store"></i><br />Shop</a
+        >
+      </li>
+      <li class="cart-box" *ngIf="userIsAuthenticated && user.isAdmin === true">
+        <a routerLink="/admin-shop" routerLinkActive="active" mat-button
+          ><i class="fas fa-store"></i><br />Shop</a
+        >
+      </li>
+
+      <li
+        [ngClass]="{ logout: currentRoute === '/shop' }"
+        class="logout"
+        (click)="logout()"
+        *ngIf="userIsAuthenticated"
+      >
+        <a mat-button
+          ><i class="fas fa-sign-out-alt"></i><br />
+          Logout</a
+        >
+      </li>
+    </ul>
+  </mat-toolbar>
+</div>

@@ -1,15 +1,14 @@
 
 
-import { ProductsService } from './../../../services/products.service';
+import { ProductsService } from './../../services/products.service';
 import { Subscription } from "rxjs";
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-// import { DialogComponent } from './../dialog/dialog.component';
 import { UserModel } from 'src/app/models/user-model';
 import { AuthState } from 'src/app/redux/auth/auth-types';
 import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from 'src/app/services/auth.service';
-import { DialogComponent } from "../../dialog/dialog.component";
+import { DialogComponent } from "../dialog/dialog.component";
 import { CartService } from "src/app/services/cart.service";
 import { CartModel } from "src/app/models/cart-model";
 import { OrdersService } from 'src/app/services/orders.service';

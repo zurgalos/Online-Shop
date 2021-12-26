@@ -25,7 +25,7 @@ import { AuthEffects } from './redux/auth/auth-effects';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './components/home-page/home-page/home-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductsTabsComponent } from './components/products-tab/products-tab.component';
